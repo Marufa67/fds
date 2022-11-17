@@ -1,69 +1,42 @@
 @extends('backend.master')
-
-
 @section('content')
-
-
-
-    <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
-
-        @if($errors->any())
-            @foreach($errors->all() as $message)
-                <p class="alert alert-danger">{{$message}}</p>
-            @endforeach
-        @endif
-
-            @if(session()->has('message'))
-                <p class="alert alert-success">{{session()->get('message')}}</p>
-            @endif
-
-        @csrf
-        <div class="form-group">
-            <label for="name">Enter Product Name</label>
-            <input required name="product_name" type="text" class="form-control" id="name" placeholder="Enter Product Name">
-        </div>
-
-            <div class="form-group">
-                <label for="price">Enter Product Price</label>
-                <input required name="product_price" type="number" class="form-control" id="price" placeholder="Enter Product Price">
-            </div>
-            <div class="form-group">
-                <label for="stock">Enter Product Stock</label>
-                <input required name="product_stock" type="number" class="form-control" id="price" placeholder="Enter Product Stock">
-            </div>
-
-            <div class="form-group">
-            <label for="name">Description</label>
-            <textarea class="form-control" name="description" id=""></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="">Select Status</label>
-            <select name="status" id="" class="form-control">
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
-            </select>
-        </div>
-
-            <div class="form-group">
-                <label for="">Select Category</label>
-                <select name="category_id" id="" class="form-control">
-                    @foreach($categories  as $cat)
-                    <option value="{{$cat->id}}">{{$cat->name}}</option>
-                    @endforeach
-                </select>
-            </div>
-
-        <div class="form-group">
-            <label for="image">Upload Image</label>
-            <input name="image" type="file" class="form-control" id="image">
-        </div>
-
-
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-@endsection
-
-
+<h1>Add a Product</h1>
+<form action="{{route('product.store')}}" method="post">
+    @csrf
+    <div class="form-group mb-3">
+        <label for="category_id" class="form-label" style="color: red;">Category ID:</label>
+        <input type="number" name="category_id" id="category_id" class="form-control" placeholder="101" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Teach Yourself Web Development" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <input type="text" name="description" id="description" class="form-control" placeholder="This is a beautiful product">
+    </div>
+    <div class="form-group mb-3">
+        <label for="image" class="form-label">Image:</label>
+        <input type="file" id="image" name="image" class="form-control" accept="image/png, image/jpeg, image/jpg, image/gif">
+    </div>
+    <div class="form-group mb-3">
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" id="price" name="price" class="form-control" step="any" placeholder="BDT 500" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="stock" class="form-label">Stock:</label>
+        <input type="number" min="1" max="20" name="stock" id="stock" class="form-control" placeholder="3" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="stock_status" class="form-label">Stock Status:</label>
+        <select name="stock_status" id="stock_status" class="form-control">
+            <option value="Available" default>Availabe</option>
+            <option value="Not Availabe">Not Available</option>
+        </select>
+    </div>
+    <div class="form-group d-flex justify-content-center">
+        <input type="submit" value="Submit" class="btn btn-primary m-2">
+        <input type="reset" value="Reset" class="btn btn-primary m-2">
+    </div>
+</form>
 @endsection

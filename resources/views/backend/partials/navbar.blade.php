@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/shop')}}" aria-expanded="false" aria-controls="vendors">
+            <a class="nav-link" href="{{url('/')}}" aria-expanded="false" aria-controls="vendors">
                 <i class="icon-layout menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -16,7 +16,7 @@
 
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/order')}}" aria-expanded="false" aria-controls="orders">
+            <a class="nav-link" href="{{route('orders.list')}}" aria-expanded="false" aria-controls="orders">
                 <i class="icon-head menu-icon"></i>
                 <span class="menu-title">Order</span>
                 
@@ -30,7 +30,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('product')}}">
+            <a class="nav-link" href="{{route('product.list')}}">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Product</span>
             </a>
@@ -42,7 +42,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('payment.list')}}">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Payment</span>
             </a>

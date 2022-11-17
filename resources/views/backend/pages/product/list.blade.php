@@ -1,48 +1,58 @@
 @extends('backend.master')
-
-
 @section('content')
-
-<h1>Product List</h1>
-
-<a href="{{route('product.create')}}" class="btn btn-primary" >Create New Product</a>
-
-<table class="table table-striped">
+<div>
+    <h1>Products Table</h1>
+    @if(session()->has('message'))
+     <p class="alert alert-success">{{session()->get('message')}}</p>
+    @endif
+    @if(session()->has('error'))
+        <p class="alert alert-danger">{{session()->get('error')}}</p>
+    @endif
+    <a href="{{route('product.create')}}">
+    
+        <button type="button" class="btn btn-primary">Add Product</button>
+    </a>
+</div>
+<table class="table">
     <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Image</th>
-        <th scope="col">Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Category Name</th>
-        <th scope="col">Status</th>
-        <th scope="col">Stock</th>
-        <th scope="col">Action</th>
-    </tr>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Category ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image</th>
+            <th scope="col">Price</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Stock Status</th>
+            <th scope="col" style="text-align:center;">Action</th>
+        </tr>
     </thead>
     <tbody>
-        
-    @foreach($products  as $data)
-        <tr>
-            <th scope="row">{{$data->id}}</th>
-            <td>
 
-                <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="product_image">
-            </td>
+        @foreach($products as $data)
+        <tr>
+            <td>{{$data->id}}</td>
             <td>{{$data->name}}</td>
-            <td>{{$data->price}} BDT</td>
-            <td>{{$data->category->name}}</td>
-            <td>{{$data->status}}</td>
+            <td>{{$data->description}}</td>
+            <td></td>
+            <td>{{$data->price}}</td>
             <td>{{$data->stock}}</td>
-            <td>
-                <a href="" class="btn btn-primary">View</a>
-                <a href="" class="btn btn-info">Edit</a>
-                <a href="" class="btn btn-danger">Delete</a>
+            <td>{{$data->status}}</td>
+            <td></td>
+            <td style="text-align: center;">
+                <a href="{{ url('') }}">
+                    <button type="button" class="btn btn-info">View</button>
+                </a>
+                <a href="{{ url('') }}">
+                    <button type="button" class="btn btn-warning">Update</button>
+                </a>
+                <a href="{{route('admin.product.delete',['product_id'=> $data->id])}}">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </a>
             </td>
         </tr>
         @endforeach
-
-        </tbody>
-    </table>
+    </tbody>
+    
+</table>
 @endsection
-
