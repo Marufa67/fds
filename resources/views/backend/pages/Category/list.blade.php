@@ -41,8 +41,9 @@
 
 
     </tbody>
-    {{$cats->links()}}
+    
 </table>
+{{$cats->links()}}
 
 
 @endsection

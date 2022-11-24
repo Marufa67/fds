@@ -1,15 +1,15 @@
 @extends('backend.master')
 @section('content')
     <div class="mt-3">
-        <h1 style="text-align: center;">List of Payments</h1>
+        <h1 >List of Payments</h1>
     </div>
     <table class="table">
         {{-- @dd($payment) --}}
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col" style="color: red;">Order ID</th>
-                <th scope="col" style="color: red">Customer ID</th>
+                <th scope="col" >Order ID</th>
+                <th scope="col" >Customer ID</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Payment Type</th>
                 <th scope="col">Provider</th>

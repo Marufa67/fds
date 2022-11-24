@@ -6,10 +6,15 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('category.list')}}">
+                <i class="icon-paper menu-icon"></i>
+                <span class="menu-title">Category</span>
+            </a>
+        </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/shop')}}" aria-expanded="false" aria-controls="vendors">
+            <a class="nav-link" href="{{route('shop')}}" aria-expanded="false" aria-controls="vendors">
                 <i class="icon-layout menu-icon"></i>
                 <span class="menu-title">Shop</span>
             </a>
@@ -23,7 +28,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/customer')}}" aria-expanded="false" aria-controls="error">
+            <a class="nav-link" href="{{route('customer')}}" aria-expanded="false" aria-controls="error">
                 <i class="icon-ban menu-icon"></i>
                 <span class="menu-title">Customer</span>
                 
@@ -53,12 +58,7 @@
                 <span class="menu-title">Order_delivery man</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('category.list')}}">
-                <i class="icon-paper menu-icon"></i>
-                <span class="menu-title">Category</span>
-            </a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link" href="#">
                 <i class="icon-paper menu-icon"></i>
