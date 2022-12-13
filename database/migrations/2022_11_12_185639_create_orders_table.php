@@ -22,6 +22,8 @@ return new class extends Migration
             $table->double('product_price', 7, 2);
             $table->double('shipping_price', 5, 2);
             $table->double('total_price', 7, 2);
+            $table->string('status')->default('pending');
+            $table->time('deliveryremainingTime')->nullable();
             $table->timestamps();
         });
     }

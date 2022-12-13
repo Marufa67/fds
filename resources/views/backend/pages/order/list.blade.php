@@ -13,11 +13,13 @@
             <th scope="col">Expected Delivery Date</th>
             <th scope="col">Product Price</th>
             <th scope="col">Shipping Price</th>
+            
             <th scope="col">Total Price</th>
             <th scope="col" style="text-align: center;">Action</th>
         </tr>
     </thead>
     <tbody>
+   
     @foreach ($orders as $data)
         <tr>
             <td>{{ $data->id }}</td>

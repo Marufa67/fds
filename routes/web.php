@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth','prefix' => 'admin'], function () {
 
     Route::get('/delivery_man/delete/{delivery_man_id}',[DeliveryManController::class,'deleteDelivery_man'])->name('admin.delivery_man.delete');
     Route::get('/delivery_man/view/{delivery_man_id}',[DeliveryManController::class,'viewDelivery_man'])->name('admin.delivery_man.view');
+    Route::get('/delivery_man/update-order-status/{order_id}',[DeliveryManController::class,'viewDeliveryUpdateOrderStatus'])->name('admin.viewDeliveryUpdateOrderStatus');
 
     Route::get('/delivery_man/edit/{delivery_man_id}',[DeliveryManController::class,'edit'])->name('delivery_man.edit');
     Route::put('/delivery_man/update/{delivery_man_id}',[DeliveryManController::class,'update'])->name('delivery_man.update');

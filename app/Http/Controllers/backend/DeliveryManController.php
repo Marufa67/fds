@@ -64,7 +64,8 @@ class DeliveryManController extends Controller
     {
         $delivery_man=Delivery_man::find($delivery_man_id);
         $deliveryManDispatchedOrder = Order::where('delivery_man_id',$delivery_man->id)->count();
-        $deliveryManDispatchedOrderDetails = Order::where('delivery_man_id',$delivery_man->id)->get();
+        $deliveryManDispatchedOrderDetails = Order::where('delivery_man_id',$delivery_man->id)->with('customer','product','delivery_man')->get();
+        // dd($deliveryManDispatchedOrderDetails);
         // dd($deliveryManDispatchedOrderDetails);
         return view('backend.pages.delivery_man.view',compact('delivery_man','deliveryManDispatchedOrder','deliveryManDispatchedOrderDetails'));
 
@@ -88,5 +89,11 @@ class DeliveryManController extends Controller
             'status' => $request->status
          ]);
          return redirect()->route('delivery_man.list')->with('message','Update successfully.');
+    }
+    public function viewDeliveryUpdateOrderStatus($id){
+        $orderUpdatedStatus = Order::find($id)->update([
+            'status'=>'dispatched',
+        ]);
+        return back();
     }
 }

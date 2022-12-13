@@ -16,18 +16,12 @@
 
 
 
-
-
-
-
-
-
 {{-- book a table Section  --}}
 <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
     <div class="">
         <h2 class="section-title mb-5">Fastest Pickup and Delivery</h2>
         <p>
-            You need to register your shop. Then login into system. Place order. Then our delivery man will collect your food from your shop and deliver to your customer. We collect the payment from the customer and keep it to us. We make weekly payment to shop after deduction of our commission.  
+            You need to register your shop. Then login into system. Place order. Then our delivery man will collect your food from your shop and deliver to your customer. We collect the payment from the customer and keep it to us. We make weekly payment to shop after deduction of our commission.    
         </p>
         
     </div>

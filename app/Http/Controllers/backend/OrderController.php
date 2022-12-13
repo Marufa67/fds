@@ -40,7 +40,7 @@ class OrderController extends Controller
          'total_price' => 'required'
 
       ]);
-      Order::create([
+      $order = Order::create([
          'customer_id' => $request->customer_id,
          'product_id' => $request->product_id,
          'delivery_man_id' => $request->delivery_man_id,
