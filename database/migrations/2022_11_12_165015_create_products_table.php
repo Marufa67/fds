@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained('categories');
+            $table->string('category_id')->constrained('categories');
+            $table->string('user_id');
             $table->string('name', 100);
             $table->text('description');
             $table->string('image');
             $table->double('price', 7, 2);
-            $table->integer('stock')->default(0);
-            $table->string('stock_status',10)->default('active');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

@@ -7,15 +7,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="#home">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="#gallary">Gallary</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#book-table">Book-Table</a>
+                <a class="nav-link" href="#gallary">Reviews</a>
             </li>
+
         </ul>
 
         @if(session()->has('message'))
@@ -29,12 +28,8 @@
 
         @auth
         <ul class="navbar-nav">
-            <li class="nav-item dropdown-trigger">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#login">{{auth()->user()->name}}'s Account</a>
-                {{-- <ul class="dropdown-box">
-                    <li>Accout Details</li>
-                    <li>Logout</li>
-                </ul> --}}
+             <li class="nav-item dropdown-trigger">
+             <a class="nav-link" href="{{route('user.profile')}}">{{auth()->user()->name}}'s Account</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('user.logout')}}">Logout</a>
@@ -43,12 +38,19 @@
         </ul>
         @else
         <ul class="navbar-nav">
+       
+            
             <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#login">Login</a>
+                <a class="nav-link" href="{{route('login')}}" >Login</a>
 
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#testmonial" data-toggle="modal" data-target="#register">Registration</a>
+            </li>
+            <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shopModal">
+               Shop Registration
+                </button>
             </li>
 
         </ul>
@@ -70,7 +72,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">login</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Login please</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -135,4 +137,52 @@
 
         </div>
     </div>
+</div>
+<!-- shop registration modal  -->
+<!-- Modal -->
+<div class="modal fade" id="shopModal" tabindex="-1" role="dialog" aria-labelledby="shopModalModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login please</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <form action="{{route('shop.registration')}}" method="post">
+                @csrf
+
+
+            
+  <div class="form-group">
+    <label for="exampleInputEmail1">Enter your name</label>
+    <input name="name" type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Enter your email</label>
+    <input name="email" type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input name ="password"type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Enter phone number</label>
+    <input name ="number"type="number" class="form-control" id="exampleInputPassword1" placeholder="number">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+        
+      </div>
+
+    </div>
+  </div>
 </div>

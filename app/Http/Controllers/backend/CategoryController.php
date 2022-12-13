@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -15,6 +16,7 @@ class CategoryController extends Controller
         // $cats=Category::all();
         //        dd($cats);
         $cats = Category::paginate(2);
+      
         return view('backend.pages.category.list', compact('cats'));
     }
 
@@ -26,7 +28,7 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate(['category_name' => 'required|unique:categories,name']);
+        $request->validate(['category_name' => 'required']);
 
         $fileName = null;
         if ($request->hasFile('image')) {
@@ -49,4 +51,28 @@ class CategoryController extends Controller
         //        return redirect()->route('category.list');
         return redirect()->back();
     }
-}
+
+        public function deleteCategory(int $category_id)
+
+   
+        {
+             // dd($category_id);
+        
+            $test=Category::find($category_id);
+            if($test)
+            {
+                $test->delete();
+                return redirect()->back()->with('message','category deleted successfully.');
+            }else{
+                return redirect()->back()->with('error','category not found.');
+            }
+   
+        }
+        public function viewCategory(int $category_id)
+        {
+            $category=Category::find($category_id);
+            return view('backend.pages.category.view',compact('category'));
+  
+        }
+
+    }

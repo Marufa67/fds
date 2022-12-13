@@ -30,8 +30,12 @@
             <td>{{$data->name}}</td>
             <td>{{$data->status}}</td>
             <td>
-                <a href="" class="btn btn-primary">View</a>
-                <a href="" class="btn btn-danger">Delete</a>
+                <a href="{{route('admin.category.view',['category_id'=> $data->id])}}" class="btn btn-primary">View</a>
+
+                <a href="{{route('admin.category.delete',['category_id'=> $data->id])}}" >
+                <button type="button" class="btn btn-danger">Delete</button>
+            </a>
+
                 <a href="" class="btn btn-warning">Edit</a>
 
             </td>

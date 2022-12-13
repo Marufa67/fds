@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,23 +15,15 @@ class ProductController extends Controller
     }
 
     public function create(){
-        return view('backend.pages.product.create');
+        $categories = Category::all();
+
+        return view('backend.pages.product.create',compact('categories'));
     }
 
     public function store(Request $request){
+        // dd($request->all());
       
-        // $request->validate(['product_name' => 'required|unique:products,name']);
-        
-        
-           
-            // 'category_id' => 'required',
-            // 'name' => 'required',
-            // 'description' => 'required',
-            // 'image' => 'required',
-            // 'price' => 'required|numeric',
-            // 'stock' => 'required|numeric',
-            // 'stock_status' => 'required|numeric',
-        
+        $request->validate(['name' => 'required|unique:products,name']);
 
         $fileName=null;
         if($request->hasFile('image'))
@@ -42,19 +35,17 @@ class ProductController extends Controller
         
             Product::create([
                 'category_id' => $request->category_id,
-
                 'name' => $request->name,
+                'user_id' =>auth()->user()->id,
                 'description' => $request->description,
                 'image' => $fileName,
                 'price' => $request->price,
-                'stock' => $request->stock,
-                'stock_status' => $request->stock_status,
+                'status' => $request->status,
             ]);
 
 
             return redirect()->back()->with('message','Product Created Successful.');
-        // return redirect()->back();
-        // return redirect()->route('product.list');
+      
     }
 
 
@@ -98,8 +89,8 @@ class ProductController extends Controller
                            'description' => $request->description,
                            'image' => $request->image,
                            'price' => $request->price,
-                           'stock' => $request->stock,
-                           'stock_status' => $request->stock_status,
+                          
+                           'status' => $request->status,
             ]);
     
             return redirect()->route('product.list')->with('message','Update successfully.');

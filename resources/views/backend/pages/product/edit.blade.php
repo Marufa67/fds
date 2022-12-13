@@ -27,15 +27,12 @@
         <label for="price" class="form-label">Price:</label>
         <input type="number" id="price" name="price" class="form-control" step="any" placeholder="BDT 500" required>
     </div>
+
     <div class="form-group mb-3">
-        <label for="stock" class="form-label">Stock:</label>
-        <input type="number" min="1" max="20" name="stock" id="stock" class="form-control" placeholder="3" required>
-    </div>
-    <div class="form-group mb-3">
-        <label for="stock_status" class="form-label">Stock Status:</label>
-        <select name="stock_status" id="stock_status" class="form-control">
-            <option @if($product->status=='available') selected @endif value="Available">Availabe</option>
-            <option @if($product->status=='not available') selected @endif value="Not Available">>Not Available</option>
+        <label for="status" class="form-label">Status</label>
+        <select name="status" id="status" class="form-control">
+            <option @if($product->status=='active') selected @endif value="Active">Active</option>
+            <option @if($product->status=='Inactive') selected @endif value="Inactive>>Inactive</option>
         </select>
     </div>
     <div class="form-group d-flex justify-content-center">

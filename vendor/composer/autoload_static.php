@@ -32,6 +32,7 @@ class ComposerStaticInit72429b3d3f16ae61b217d88bc8931b8c
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '38ea50801e981fa2297115e1c44a148b' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
     );
@@ -110,6 +111,7 @@ class ComposerStaticInit72429b3d3f16ae61b217d88bc8931b8c
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Mckenziearts\\Notify\\' => 20,
         ),
         'L' => 
         array (
@@ -371,6 +373,10 @@ class ComposerStaticInit72429b3d3f16ae61b217d88bc8931b8c
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Mckenziearts\\Notify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -511,9 +517,13 @@ class ComposerStaticInit72429b3d3f16ae61b217d88bc8931b8c
         'App\\Http\\Controllers\\backend\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/CategoryController.php',
         'App\\Http\\Controllers\\backend\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/CustomerController.php',
         'App\\Http\\Controllers\\backend\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/Dashboard.php',
+        'App\\Http\\Controllers\\backend\\DeliveryManController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/DeliveryManController.php',
         'App\\Http\\Controllers\\backend\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/OrderController.php',
+        'App\\Http\\Controllers\\backend\\OrderDeliveryManController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/OrderDeliveryManController.php',
+        'App\\Http\\Controllers\\backend\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/PaymentController.php',
         'App\\Http\\Controllers\\backend\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/ProductController.php',
         'App\\Http\\Controllers\\backend\\ShopController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/ShopController.php',
+        'App\\Http\\Controllers\\backend\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -526,7 +536,9 @@ class ComposerStaticInit72429b3d3f16ae61b217d88bc8931b8c
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
+        'App\\Models\\Delivery_man' => __DIR__ . '/../..' . '/app/Models/Delivery_man.php',
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
+        'App\\Models\\Order_delivery_man' => __DIR__ . '/../..' . '/app/Models/Order_delivery_man.php',
         'App\\Models\\Payment' => __DIR__ . '/../..' . '/app/Models/Payment.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -643,6 +655,7 @@ class ComposerStaticInit72429b3d3f16ae61b217d88bc8931b8c
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\UserTableSeeder' => __DIR__ . '/../..' . '/database/seeders/UserTableSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -3021,6 +3034,12 @@ class ComposerStaticInit72429b3d3f16ae61b217d88bc8931b8c
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
         'League\\MimeTypeDetection\\OverridingExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php',
+        'Mckenziearts\\Notify\\Exceptions\\MissingPresetNotificationException' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/Exceptions/MissingPresetNotificationException.php',
+        'Mckenziearts\\Notify\\Facades\\LaravelNotify' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/Facades/LaravelNotify.php',
+        'Mckenziearts\\Notify\\LaravelNotify' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/LaravelNotify.php',
+        'Mckenziearts\\Notify\\LaravelNotifyServiceProvider' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/LaravelNotifyServiceProvider.php',
+        'Mckenziearts\\Notify\\NotifyComponent' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/NotifyComponent.php',
+        'Mckenziearts\\Notify\\Storage\\Session' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/Storage/Session.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',

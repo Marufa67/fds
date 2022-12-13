@@ -20,6 +20,7 @@
             </a>
 
         </li>
+        
         <li class="nav-item">
             <a class="nav-link" href="{{route('orders.list')}}" aria-expanded="false" aria-controls="orders">
                 <i class="icon-head menu-icon"></i>
@@ -41,7 +42,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('delivery_man.list')}}">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Delivery man</span>
             </a>
@@ -53,7 +54,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('order_delivery_man.list')}}">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Order_delivery man</span>
             </a>

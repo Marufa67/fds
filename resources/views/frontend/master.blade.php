@@ -19,6 +19,9 @@
 	<link rel="stylesheet" href="{{url('/frontend/assets/css/foodhut.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    @notifyCss
+    @include('notify::components.notify')
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     
@@ -42,6 +45,7 @@
     <!-- wow.js -->
     <script src="{{url('/frontend/assets/vendors/wow/wow.js')}}"></script>
     
+
     <!-- google maps -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
 
@@ -51,5 +55,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+@notifyJs
 </body>
 </html>

@@ -24,8 +24,8 @@
             <th scope="col">Description</th>
             <th scope="col">Image</th>
             <th scope="col">Price</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Stock Status</th>
+           
+            <th scope="col">Status</th>
             <th scope="col" style="text-align:center;">Action</th>
         </tr>
     </thead>
@@ -42,7 +42,7 @@
             <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="product_image">
             </td>
             <td>{{$data->price}} BDT</td>
-            <td>{{$data->stock}}</td>
+           
             <td>{{$data->status}}</td>
             <td style="text-align: center;">
                 <a href="{{route('admin.product.view',['product_id' => $data->id])}}">

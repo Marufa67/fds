@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained('customers');
-            $table->foreignId('product_id')->constrained('products');
-            $table->integer('product_quantity');
+            $table->string('customer_id')->constrained('customers');
+            $table->string('product_id')->constrained('products');
+            $table->string('delivery_man_id')->constrained('delivery_men');
             $table->date('expected_delivery_date');
             $table->double('product_price', 7, 2);
             $table->double('shipping_price', 5, 2);
