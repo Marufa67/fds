@@ -9,10 +9,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#gallary">Gallary</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#gallary">Reviews</a>
+                <a class="nav-link" href="#home">About</a>
             </li>
 
         </ul>
@@ -23,7 +20,7 @@
 
         <a class="navbar-brand m-auto" href="#">
             <img src="assets/imgs/logo.svg" class="brand-img" alt="">
-            <span class="brand-txt">Food Hut</span>
+            <span class="brand-txt">FDS</span>
         </a>
 
         @auth
@@ -46,11 +43,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#testmonial" data-toggle="modal" data-target="#register">Registration</a>
-            </li>
-            <li class="nav-item">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shopModal">
-               Shop Registration
-                </button>
             </li>
 
         </ul>

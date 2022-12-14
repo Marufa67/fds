@@ -7,8 +7,8 @@
 <header id="home" class="header">
     <div class="overlay text-white text-center">
         <h1 class="display-2 font-weight-bold my-3">Food Delivery system Platform</h1>
-        <h2 class="display-4 mb-5">Easy Order. Pick up . Delivery</h2>
-        <a class="btn btn-lg btn-primary" href="#gallary">Register Your Shop</a>
+        <h2 class="display-4 mb-5">Easy Order . Pick up . Delivery</h2>
+        <a class="btn btn-lg btn-primary" href="#" data-toggle="modal" data-target="#registerShopModal">Register Your Shop</a>
     </div>
 </header>
 
@@ -21,11 +21,11 @@
     <div class="">
         <h2 class="section-title mb-5">Fastest Pickup and Delivery</h2>
         <p>
-            You need to register your shop. Then login into system. Place order. Then our delivery man will collect your food from your shop and deliver to your customer. We collect the payment from the customer and keep it to us. We make weekly payment to shop after deduction of our commission.    
+            You need to register your shop. Then login into system. Place order. Then our delivery man will collect your food from your shop and deliver to your customer. We collect the payment from the customer and keep it to us. We make weekly payment to shop after deduction of our commission.
         </p>
-        
+
     </div>
-</div> 
+</div>
 
 
 {{-- BLOG Section  --}}
@@ -159,6 +159,49 @@
                 <p><span class="ti-location-pin pr-3"></span> 12345 Fake ST NoWhere, AB Country</p>
                 <p><span class="ti-support pr-3"></span> (123) 456-7890</p>
                 <p><span class="ti-email pr-3"></span>info@website.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- Register Shop Modal --}}
+<div class="modal fade" id="registerShopModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Register Your Shop</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('shop.registration') }}" method="post">
+                    @csrf
+                    <div class="form-group mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your shop name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="phone_no" class="form-label">Contact Number:</label>
+                        <input type="text" id="phone_no" name="phone_no" class="form-control" placeholder="Enter your contact number" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="address" class="form-label">Address:</label>
+                        <textarea id="address" name="address" class="form-control" placeholder="Enter your contact number" required></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="abc@gmail.com" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="ab01@.ab" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="Submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

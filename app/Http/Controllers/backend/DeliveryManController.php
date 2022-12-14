@@ -11,7 +11,9 @@ class DeliveryManController extends Controller
 {
     public function list()
     {
-        $delivery_man=Delivery_man::all();
+        // $delivery_man=Delivery_man::all();
+        $delivery_man=Delivery_man::paginate(2);
+
         return view('backend.pages.delivery_man.list',compact('delivery_man'));
     }
     public function create()

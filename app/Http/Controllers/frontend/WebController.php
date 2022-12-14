@@ -67,9 +67,8 @@ class WebController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-            'phone_no' => $request->number,
+            'phone_no' => $request->phone_no,
             'description' => $request->description,
-            'image' => $request->image,
             'address' => $request->address,
             'role' => 'shop'
         ]);

@@ -43,5 +43,6 @@
     @endforeach
   </tbody>
 </table>
+{{ $delivery_man->links() }}
 
 @endsection
