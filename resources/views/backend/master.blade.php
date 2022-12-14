@@ -63,6 +63,8 @@
         <script src="{{ url('js/Chart.roundedBarCharts.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
         <!-- End custom js for this page-->
+
+        @stack('js')
 </body>
 
 </html>
